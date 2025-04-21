@@ -1,6 +1,6 @@
 {
   "name": "@hersy/eslint-config-node",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A modern ESLint configuration for NodeJS, following my styleguide",
   "keywords": [
     "config",
@@ -24,6 +24,7 @@
   "type": "module",
   "files": [
     "rules",
+    "cjs.js",
     "index.js"
   ],
   "main": "index.js",
