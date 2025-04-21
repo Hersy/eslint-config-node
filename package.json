@@ -1,6 +1,6 @@
 {
   "name": "@hersy/eslint-config-node",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A modern ESLint configuration for NodeJS, following my styleguide",
   "keywords": [
     "config",
@@ -64,7 +64,7 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/runtime": "^7.27.0",
-    "@hersy/babel-preset": "^0.1.1",
+    "@hersy/babel-preset": "^0.2.0",
     "@hersy/babel-tape-runner": "^1.0.0",
     "eslint": "^9.24.0",
     "eslint-find-rules": "^5.0.0",
