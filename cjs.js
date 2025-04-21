@@ -12,7 +12,7 @@ export default [
       n: nodePlugin,
     },
     languageOptions: {
-      sourceType: 'commonjs',
+      sourceType: 'script',
       globals: globals.node,
     },
     rules: {

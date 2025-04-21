@@ -1,6 +1,6 @@
 {
   "name": "@hersy/eslint-config-node",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A modern ESLint configuration for NodeJS, following my styleguide",
   "keywords": [
     "config",
@@ -36,8 +36,8 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "lint": "eslint . --report-unused-disable-directives --ext .js,ts,jsx,tsx,json,css,md",
-    "lint-fix": "eslint . --fix --ext .js,ts,jsx,tsx,json,css,md",
+    "lint": "eslint . --report-unused-disable-directives --ext .js,json,md",
+    "lint-fix": "eslint . --fix --ext .js,json,md",
     "format": "yarn run --silent lint-fix",
     "eslint-check": "eslint --print-config eslint.config.js",
     "pretests-only": "node ./test/imports",
