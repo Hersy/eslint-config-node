@@ -134,3 +134,14 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Lockfiles
+package-lock.json
+yarn.lock
+npm-shrinkwrap.json
+
+# Folder view options
+*.DS_Store
+
+# VSCode editor settings
+.vscode
