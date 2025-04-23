@@ -2,6 +2,9 @@ const options = {
   maxClassesPerFile: 1,
 };
 
+const isFiniteMessage = 'Please use Number.isFinite instead';
+const isNanMessage = 'Please use Number.isNaN instead';
+
 export default {
   'accessor-pairs': 'off',
   'array-callback-return': ['error', {
@@ -173,27 +176,27 @@ export default {
   }, {
     object: 'global',
     property: 'isFinite',
-    message: 'Please use Number.isFinite instead',
+    message: isFiniteMessage,
   }, {
     object: 'self',
     property: 'isFinite',
-    message: 'Please use Number.isFinite instead',
+    message: isFiniteMessage,
   }, {
     object: 'window',
     property: 'isFinite',
-    message: 'Please use Number.isFinite instead',
+    message: isFiniteMessage,
   }, {
     object: 'global',
     property: 'isNaN',
-    message: 'Please use Number.isNaN instead',
+    message: isNanMessage,
   }, {
     object: 'self',
     property: 'isNaN',
-    message: 'Please use Number.isNaN instead',
+    message: isNanMessage,
   }, {
     object: 'window',
     property: 'isNaN',
-    message: 'Please use Number.isNaN instead',
+    message: isNanMessage,
   }, {
     property: '__defineGetter__',
     message: 'Please use Object.defineProperty instead.',

@@ -1,6 +1,5 @@
 const options = {
   maxDepth: 12,
-  maxLines: 12,
   maxNestedCallbacks: 12,
   maxParams: 12,
   maxStatements: 64,
@@ -51,7 +50,6 @@ export default {
   'new-cap': [
     'warn',
     {
-      newIsCap: true,
       capIsNew: false,
       capIsNewExceptions: [
         'Immutable.Map',

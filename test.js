@@ -1,23 +1,13 @@
 import globals from 'globals';
 
 import {
-  cssConfig,
   ecmaConfig,
-  eslintCommentsConfig,
-  htmlConfig,
   importConfig,
-  jsdocConfig,
-  jsonConfig,
-  markdownConfig,
   nodeConfig,
   promiseConfig,
   regexpConfig,
-  sdlConfig,
-  securityConfig,
-  sonarjsConfig,
   stylisticConfig,
   typescriptConfig,
-  unicornConfig,
 } from './configs/index.js';
 
 const files = ['**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}'];
@@ -40,23 +30,40 @@ const applyConfig = config => ({
   },
 });
 
+const disableRules = (config, rules) => ({
+  ...config,
+  rules: {
+    ...config.rules,
+    ...Object.assign({}, ...rules.map(key => ({ [key]: 'off' }))),
+  },
+});
+
 export default [
-  { ignores: ['lib/**/*', 'node_modules/**/*', 'test/**/*'] },
-  applyConfig(ecmaConfig),
+  disableRules(
+    applyConfig(ecmaConfig),
+    [
+      'strict',
+      'no-magic-numbers',
+      'no-restricted-syntax',
+    ],
+  ),
   applyConfig(typescriptConfig),
-  applyConfig(nodeConfig),
-  applyConfig(importConfig),
+  disableRules(
+    applyConfig(nodeConfig),
+    [
+      'n/global-require',
+      'n/no-sync',
+    ],
+  ),
+  disableRules(
+    applyConfig(importConfig),
+    [
+      'import/no-dynamic-require',
+      'import/no-extraneous-dependencies',
+      'import/no-nodejs-modules',
+    ],
+  ),
   applyConfig(promiseConfig),
-  applyConfig(unicornConfig),
-  applyConfig(sonarjsConfig),
   applyConfig(regexpConfig),
-  applyConfig(jsdocConfig),
-  applyConfig(eslintCommentsConfig),
-  applyConfig(securityConfig),
-  applyConfig(sdlConfig),
   applyConfig(stylisticConfig),
-  jsonConfig,
-  markdownConfig,
-  htmlConfig,
-  cssConfig,
 ];
