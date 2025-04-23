@@ -6,6 +6,7 @@ const options = {
 };
 
 export default {
+  name: 'stylisticConfig',
   plugins: { '@stylistic': stylisticPlugin },
   rules: {
     '@stylistic/array-bracket-newline': ['warn', 'consistent'],

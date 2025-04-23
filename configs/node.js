@@ -1,6 +1,7 @@
 import nodePlugin from 'eslint-plugin-n';
 
 export default {
+  name: 'nodeConfig',
   plugins: { n: nodePlugin },
   rules: {
     'n/callback-return': 'error',

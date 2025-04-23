@@ -1,4 +1,4 @@
-# NodeJS ESLint Config v0.3.2
+# NodeJS ESLint Config v0.4.0
 
 A modern ESLint configuration for NodeJS, following my styleguide.
 Provides rule enfocement, linting, and auto-formating for JavaScript, TypeScript, MarkDown, JSON and CSS files, as well as parsing of TypeScript and Babel project configured rules. 
@@ -67,9 +67,20 @@ export default config;
 For commonjs type projects, update your `eslint.config.mjs`'s default export:
 
 ```mjs
-import config from '@hersy/eslint-config-node/cjs.js';
+import { cjs } from '@hersy/eslint-config-node';
 
-export default config;
+export default cjs;
+```
+
+Since the linter ignores your test files by default, it also provides a configuration for your test files you can add to your `test/eslint.config.js` file like this:
+
+```javascript
+import { 
+  test,    // For test modules
+  cjsTest, // For commonjs tests
+} from '@hersy/eslint-config-node';
+
+export default test;
 ```
 
 You can add your own configurations and override my defined rules as you see fit:

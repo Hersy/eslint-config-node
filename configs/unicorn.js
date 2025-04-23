@@ -2,6 +2,7 @@ import unicornPlugin from 'eslint-plugin-unicorn';
 import globals from 'globals';
 
 export default {
+  name: 'unicornConfig',
   languageOptions: { globals: globals.builtin },
   plugins: { unicorn: unicornPlugin },
   rules: {

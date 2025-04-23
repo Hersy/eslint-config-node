@@ -1,6 +1,7 @@
 import tseslint from 'typescript-eslint';
 
 export default {
+  name: 'typescriptConfig',
   files: ['**/*.{ts,mts,cts,tsx}'],
   plugins: { '@typescript-eslint': tseslint.plugin },
   languageOptions: {

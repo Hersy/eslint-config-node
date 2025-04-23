@@ -1,3 +1,3 @@
-import config from '../test.js';
+import { test } from '../index.js';
 
-export default config;
+export default test;

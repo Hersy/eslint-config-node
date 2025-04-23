@@ -5,6 +5,7 @@ const options = {
 };
 
 export default {
+  name: 'sonarjsConfig',
   plugins: { sonarjs: sonarjsPlugin },
   rules: {
     'sonarjs/anchor-precedence': 'error',
