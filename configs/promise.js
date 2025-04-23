@@ -1,6 +1,7 @@
 import promisePlugin from 'eslint-plugin-promise';
 
 export default {
+  name: 'promiseConfig',
   plugins: { promise: promisePlugin },
   rules: {
     'promise/always-return': 'error',

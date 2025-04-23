@@ -1,4 +1,4 @@
-# NodeJS ESLint Config v0.3.2
+# NodeJS ESLint Config v0.4.0
 
 A modern ESLint configuration for NodeJS, following my styleguide.
 Provides rule enfocement, linting, and auto-formating for JavaScript, TypeScript, MarkDown, JSON and CSS files, as well as parsing of TypeScript and Babel project configured rules. 

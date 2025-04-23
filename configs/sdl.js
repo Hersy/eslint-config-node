@@ -1,6 +1,7 @@
 import sdlPlugin from '@microsoft/eslint-plugin-sdl';
 
 export default {
+  name: 'sdlConfig',
   plugins: { '@microsoft/sdl': sdlPlugin },
   rules: {
     '@microsoft/sdl/no-angular-bypass-sanitizer': 'error',

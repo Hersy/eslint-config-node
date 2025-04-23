@@ -1,6 +1,7 @@
 import markdownPlugin from '@eslint/markdown';
 
 export default {
+  name: 'markdownConfig',
   files: ['**/*.md'],
   plugins: { markdown: markdownPlugin },
   language: 'markdown/commonmark',

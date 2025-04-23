@@ -1,6 +1,7 @@
 import eslintCommentsPlugin from 'eslint-plugin-eslint-comments';
 
 export default {
+  name: 'eslintCommentsConfig',
   plugins: { 'eslint-comments': eslintCommentsPlugin },
   rules: {
     'eslint-comments/disable-enable-pair': 'error',

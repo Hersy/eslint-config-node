@@ -1,6 +1,7 @@
 import securityPlugin from 'eslint-plugin-security';
 
 export default {
+  name: 'securityConfig',
   plugins: { security: securityPlugin },
   rules: {
     'security/detect-bidi-characters': 'error',

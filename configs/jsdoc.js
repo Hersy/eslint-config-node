@@ -1,6 +1,7 @@
 import jsdocPlugin from 'eslint-plugin-jsdoc';
 
 export default {
+  name: 'jsdocConfig',
   plugins: { jsdoc: jsdocPlugin },
   rules: {
     'jsdoc/check-access': 'warn',

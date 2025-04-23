@@ -3,6 +3,7 @@ import importNamePlugin from 'eslint-plugin-import-name';
 import unusedImportPlugin from 'eslint-plugin-unused-imports';
 
 export default {
+  name: 'importConfig',
   plugins: {
     import: importPlugin,
     'import-name': importNamePlugin,

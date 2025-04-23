@@ -1,6 +1,7 @@
 import regexpPlugin from 'eslint-plugin-regexp';
 
 export default {
+  name: 'regexpConfig',
   plugins: { regexp: regexpPlugin },
   rules: {
     'regexp/no-contradiction-with-assertion': 'error',

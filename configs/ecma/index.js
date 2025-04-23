@@ -5,6 +5,7 @@ import standardRules from './rules/standards.js';
 import styleRules from './rules/styles.js';
 
 export default {
+  name: 'ecmaConfig',
   plugins: { js: jsPlugin },
   rules: {
     ...standardRules,
