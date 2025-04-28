@@ -42,7 +42,7 @@ const applyScriptLanguageOptions = (config, cjs = false) => ({
 });
 
 const buildConfig = (cjs = false, test = false) => [
-  { ignores: test ? [] : ['lib/**/*', 'node_modules/**/*', 'test/**/*'] },
+  { name: 'ignores', ignores: test ? [] : ['lib/**/*', 'node_modules/**/*', 'test/**/*'] },
   applyScriptLanguageOptions(ecmaConfig, cjs),
   applyScriptLanguageOptions(typescriptConfig, cjs),
   ...test
@@ -89,7 +89,6 @@ const test = buildTestConfig();
 const cjsTest = buildTestConfig(true);
 
 export {
-  applyScriptLanguageOptions,
   cjs,
   test,
   cjsTest,
