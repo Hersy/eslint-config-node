@@ -1,4 +1,3 @@
-import { composer } from 'eslint-flat-config-utils';
 import globals from 'globals';
 
 import {
@@ -32,7 +31,7 @@ const buildScriptLanguageOptions = cjs => ({
   },
 });
 
-const applyScriptLanguageOptions = (config, cjs = false) => ({
+const applyScriptLanguageOptions = (config, cjs) => ({
   files: scriptFiles,
   ...config,
   languageOptions: {
@@ -41,8 +40,13 @@ const applyScriptLanguageOptions = (config, cjs = false) => ({
   },
 });
 
-const buildConfig = (cjs = false, test = false) => [
-  { name: 'ignores', ignores: test ? [] : ['lib/**/*', 'node_modules/**/*', 'test/**/*'] },
+const isEmpty = array => {
+  const zero = 0;
+  return array.length === zero;
+};
+
+const buildConfig = (cjs = false, test = false, removeRules = []) => [
+  { ignores: test ? [] : ['lib/**/*', 'node_modules/**/*', 'test/**/*'] },
   applyScriptLanguageOptions(ecmaConfig, cjs),
   applyScriptLanguageOptions(typescriptConfig, cjs),
   ...test
@@ -64,34 +68,52 @@ const buildConfig = (cjs = false, test = false) => [
   markdownConfig,
   htmlConfig,
   cssConfig,
-];
+].map(config => {
+  if (
+    isEmpty(removeRules)
+    || typeof config !== 'object'
+    || !config.rules
+    || typeof config.rules !== 'object'
+  )
+    return config;
 
-const buildTestConfig = (cjs = false) => composer(buildConfig(cjs, true)).
-  removeRules(
-    ...cjs ? ['strict'] : [],
-    'no-magic-numbers',
-    'no-restricted-syntax',
-  );
+  const configRules = Object.keys(config.rules);
+  const remove = configRules.filter(rule => removeRules.includes(rule));
+  if (isEmpty(remove))
+    return config;
 
-const cjs = composer(buildConfig(true)).
-  removeRules(
-    'strict',
-    'n/global-require',
-    'n/no-sync',
-    'import/no-commonjs',
-    'import/no-dynamic-require',
-    'import/no-nodejs-modules',
-    'unicorn/prefer-module',
-  );
+  const disabledRules = Object.fromEntries(remove.map(rule => [rule, 'off']));
 
-const test = buildTestConfig();
+  return {
+    ...config,
+    rules: {
+      ...config.rules,
+      ...disabledRules,
+    },
+  };
+});
 
-const cjsTest = buildTestConfig(true);
+const cjsTest = buildConfig(true, true, [
+  'no-magic-numbers',
+  'no-restricted-syntax',
+  'strict',
+]);
 
-export {
-  cjs,
-  test,
-  cjsTest,
-};
+const test = buildConfig(false, true, [
+  'no-magic-numbers',
+  'no-restricted-syntax',
+]);
+
+const cjs = buildConfig(true, false, [
+  'strict',
+  'n/global-require',
+  'n/no-sync',
+  'import/no-commonjs',
+  'import/no-dynamic-require',
+  'import/no-nodejs-modules',
+  'unicorn/prefer-module',
+]);
+
+export { cjs, cjsTest, test };
 
 export default buildConfig();

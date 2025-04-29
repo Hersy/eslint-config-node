@@ -1,4 +1,4 @@
-# NodeJS ESLint Config v0.5.0
+# NodeJS ESLint Config v0.6.0
 
 A modern ESLint configuration for NodeJS, following my styleguide.
 Provides rule enfocement, linting, and auto-formating for JavaScript, TypeScript, MarkDown, JSON and CSS files, as well as parsing of TypeScript and Babel project configured rules. 
@@ -100,10 +100,8 @@ Add the following to your `package.json`'s scripts:
 
 ```json
   "scripts": {
-    "lint": "eslint . --report-unused-disable-directives --ext .js,ts,jsx,tsx,json,css,md",
-    "lint-fix": "eslint . --fix --ext .js,ts,jsx,tsx,json,css,md",
-    "format": "eslint . --fix --ext .js,ts,jsx,tsx,json,css,md",
-    "eslint-check": "eslint --print-config eslint.config.js",
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
   },
 ```
 
@@ -119,23 +117,15 @@ Add the following to your project's `.vscode/settings.json`, or your user's `~/.
 
 ```json
   {
-    "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.tabSize": 2,
-    "eslint.enable": true,
-    "eslint.format.enable": true,
-    "eslint.lintTask.enable": true,
-    "eslint.useESLintClass": true,
-    "eslint.useFlatConfig": true,
-    "eslint.codeActionsOnSave.mode": "all",
-    "eslint.lintTask.options": ". --ext .js,ts,jsx,tsx,json,css,md",
-    "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "css", "markdown", "json"],
-    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "css", "markdown", "json"],
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "always"
-    }
+    },
+    "eslint.enable": true,
+    "eslint.format.enable": true,
+    "eslint.useFlatConfig": true,
+    "eslint.codeActionsOnSave.mode": "all"
   }
 ```
 

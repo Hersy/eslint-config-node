@@ -21,7 +21,7 @@ export default {
   }],
   'consistent-return': 'error',
   'constructor-super': 'error',
-  curly: ['error', 'multi-line'],
+  curly: ['error', 'multi-or-nest'],
   'default-case': ['error', {
     commentPattern: '^no default$',
   }],

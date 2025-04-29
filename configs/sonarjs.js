@@ -221,7 +221,6 @@ export default {
     'sonarjs/no-unsafe-unzip': 'warn',
     'sonarjs/no-unthrown-error': 'warn',
     'sonarjs/no-unused-function-argument': 'warn',
-    'sonarjs/no-unused-vars': 'warn',
     'sonarjs/no-useless-increment': 'warn',
     'sonarjs/no-useless-react-setstate': 'warn',
     'sonarjs/no-variable-usage-before-declaration': 'warn',
@@ -261,5 +260,8 @@ export default {
     'sonarjs/weak-ssl': 'warn',
     'sonarjs/x-powered-by': 'warn',
     'sonarjs/xml-parser-xxe': 'warn',
+
+    // Redundant with 'no-unused-vars'
+    'sonarjs/no-unused-vars': 'off',
   },
 };

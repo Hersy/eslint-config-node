@@ -131,8 +131,13 @@ export default {
     'import-name/common-import-name': 'off',
     'import-name/default-import-name': 'off',
     'unused-imports/no-unused-imports': 'warn',
+
+    // Deprecated, replaced by 'import/first'
+    'import/imports-first': 'off',
+
+    // Redundant with 'no-unused-vars'
     'unused-imports/no-unused-vars': [
-      'warn',
+      'off',
       {
         vars: 'all',
         varsIgnorePattern: '^_',
@@ -140,8 +145,5 @@ export default {
         argsIgnorePattern: '^_',
       },
     ],
-
-    // Deprecated, replaced by 'import/first'
-    'import/imports-first': 'off',
   },
 };

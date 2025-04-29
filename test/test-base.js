@@ -10,10 +10,10 @@ import index from '../index.js';
 const files = { ...{ index } };
 
 const rulesDirectory = path.join(path.dirname(url.fileURLToPath(import.meta.url)), '../rules');
+const rules = fs.readdirSync(rulesDirectory);
 
-for (const name of fs.readdirSync(rulesDirectory)) {
+for (const name of rules)
   files[name] = require(path.join(rulesDirectory, name));
-}
 
 // Trailing function comma to test parsing
 for (const name of Object.keys(files)) {

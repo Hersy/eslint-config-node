@@ -59,7 +59,6 @@ export default {
     '@stylistic/function-call-spacing': ['warn', 'never'],
     '@stylistic/function-paren-newline': ['warn', 'multiline-arguments'],
     '@stylistic/generator-star-spacing': ['warn', { before: false, after: true }],
-    '@stylistic/implicit-arrow-linebreak': ['warn', 'beside'],
     '@stylistic/indent': ['warn', options.tabWidth],
     '@stylistic/indent-binary-ops': ['warn', options.tabWidth],
     '@stylistic/jsx-child-element-spacing': 'warn',
@@ -250,7 +249,7 @@ export default {
       },
     ],
     '@stylistic/no-whitespace-before-property': 'warn',
-    '@stylistic/nonblock-statement-body-position': ['warn', 'beside'],
+    '@stylistic/nonblock-statement-body-position': ['warn', 'below'],
     '@stylistic/object-curly-newline': [
       'warn',
       {
@@ -339,5 +338,8 @@ export default {
     ],
     '@stylistic/wrap-regex': 'warn',
     '@stylistic/yield-star-spacing': ['warn', 'after'],
+
+    // Redundant with 'arrow-body-style'
+    '@stylistic/implicit-arrow-linebreak': ['off', 'beside'],
   },
 };
