@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true, 
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node",
+    "outDir": "lib",
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "lib", "test"]
+}
